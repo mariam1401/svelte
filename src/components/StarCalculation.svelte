@@ -114,7 +114,7 @@
             </TableBodyCell>
             <TableBodyCell>
               <div class="cursor-pointer" on:click={() => removeStar(star.id)}>
-                <img src="src/assets/delete.svg" alt="" />
+                <img src="assets/delete.svg" alt="" />
               </div>
             </TableBodyCell>
           </TableBodyRow>

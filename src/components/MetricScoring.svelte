@@ -204,7 +204,7 @@
                 class="pt-9 cursor-pointer"
                 on:click={item !== 0 && (() => removeThreshold(item))}
               >
-                <img src="src/assets/delete.svg" />
+                <img src="assets/delete.svg" />
               </div>
             {/each}
           </div>
@@ -272,7 +272,7 @@
                 class="pt-9 cursor-pointer"
                 on:click={item !== 0 && (() => removeThreshold(item))}
               >
-                <img src="src/assets/delete.svg" />
+                <img src="assets/delete.svg" />
               </div>
             {/each}
           </div>
@@ -335,7 +335,7 @@
                 class="pt-9 cursor-pointer"
                 on:click={item !== 0 && (() => removeThreshold(item))}
               >
-                <img src="src/assets/delete.svg" />
+                <img src="assets/delete.svg" />
               </div>
             {/each}
           </div>

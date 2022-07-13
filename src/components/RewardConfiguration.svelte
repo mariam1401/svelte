@@ -119,7 +119,7 @@
                 class="cursor-pointer"
                 on:click={() => removeReward(reward.id)}
               >
-                <img src="src/assets/delete.svg" />
+                <img src="assets/delete.svg" />
               </div>
             </TableBodyCell>
           </TableBodyRow>
