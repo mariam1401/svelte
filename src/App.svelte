@@ -20,7 +20,6 @@ const a = {
     item4:fourthComponent,
 }
 </script>
-
 <div class="w-full h-[100vh] bg-[#f8f8f8] flex flex-col items-center pt-[100px] font-Roboto font-[300]">
     <Div {click} {id} number={1} {handleClick} component={a.item1} title="Store Details"/>
     <Div {click} {id} number={2} {handleClick} component={a.item2} title="Customer information" />
