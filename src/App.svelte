@@ -1,51 +1,31 @@
 <script lang="ts">
-  import {Router, Route, Link, navigate} from 'svelte-navigator';
-  import MainPage from 'src/components/MainPage.svelte';
-  import NewPlan from 'src/components/NewPlan.svelte';
-  import {Breadcrumb, BreadcrumbItem} from 'flowbite-svelte';
-  import SettingsIcon from 'src/components/SettingsIcon.svelte';
+import fourthComponent from "src/component/fourthComponent.svelte";
 
-  let newPlanPath = false;
+let click = false
+let id
+import Div from './component/component.svelte'
+import firstComponent from "src/component/firstComponent.svelte";
+import secondComponent from "src/component/secondComponent.svelte";
+import thirdComponent from "src/component/thirdComponent.svelte";
 
-  const getLocationPath = event => {
-    const path = event.detail.path;
-    if (path === '/newplan') newPlanPath = true;
-  };
+const handleClick = (e,number)=>{
+    e.preventDefault()
+    click = !click
+    id = number
+}
+const a = {
+    item1:firstComponent,
+    item2:secondComponent,
+    item3:thirdComponent,
+    item4:fourthComponent,
+}
 </script>
 
-<div class="flex justify-between">
-  <div>
-    <Breadcrumb
-      aria-label="Solid background breadcrumb example"
-      class="bg-[#f8f8f8] py-3 px-5"
-    >
-      <BreadcrumbItem href="/" variation="solid" icon={SettingsIcon}
-        >Settings</BreadcrumbItem
-      >
-      <BreadcrumbItem href="/">All plans</BreadcrumbItem>
-      {#if newPlanPath}
-        <BreadcrumbItem>New Plan</BreadcrumbItem>
-      {/if}
-    </Breadcrumb>
-  </div>
-  {#if newPlanPath}
-    <div
-      class="mt-3 mr-16 h-[25px] cursor-pointer text-[#1c64f2] hover:border-b border-[#1c64f2]"
-      on:click={() => {
-        navigate('/');
-        newPlanPath = false;
-      }}
-    >
-      Return to list
-    </div>
-  {/if}
+<div class="w-full h-[100vh] bg-[#f8f8f8] flex flex-col items-center pt-[100px] font-Roboto font-[300]">
+    <Div {click} {id} number={1} {handleClick} component={a.item1} title="Store Details"/>
+    <Div {click} {id} number={2} {handleClick} component={a.item2} title="Customer information" />
+    <Div {click} {id} number={3} {handleClick} component={a.item3} title="Secure Pad"/>
+    <Div {click} {id} number={4} {handleClick} component={a.item4} title="IVR Card Capture Details"/>
 </div>
 
-<Router>
-  <Route path="/">
-    <MainPage />
-  </Route>
-  <Route path="newplan">
-    <NewPlan {newPlanPath} on:getPath={getLocationPath} />
-  </Route>
-</Router>
+
